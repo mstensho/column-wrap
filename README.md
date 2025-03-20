@@ -6,4 +6,4 @@ The new `column-wrap` property is intended to enable column wrapping in other sc
 
 Column layout, and especially column layout with lots of content, where the order of the content matters [^1], has been particularly useful for paged media (where it wraps into bite-size chunks, aka pages), whereas for interactive media on screen it's not as useful. Having to scroll all the way back up to the beginning of the next column is tedious. Adding column wrapping should allow for large-content use cases on screen as well.
 
-[^1] Wikipedia uses multicol for the references at the end of articles, and the columns become really tall if there are many references, but that's not a problem, since the order here isn't crucial.
+[^1]: Wikipedia uses multicol for the references at the end of articles, and the columns become really tall if there are many references, but that's not a problem, since the order here isn't crucial.
