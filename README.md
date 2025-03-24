@@ -6,7 +6,13 @@ In multi-column (multicol) layout, content is fragmented into columns. When one 
 
 The new `column-wrap` property is intended to enable column wrapping in other scenarios than for nested multicol described above. If the value of `column-wrap` is `wrap`, and all the specified columns have been filled in the inline direction, instead of overflowing in the inline direction, a new row for columns will be created, so that more content can be added *below* the previous row of columns. The block-size of the rows can be set via the new `column-height` property. If it is `auto`, the block-size of the content box will be used instead. Treating `auto` like this is useful for scrollable overflow, so that there's room for one row of columns in the scrollport.
 
-Column layout, or paginated / fragmented content in general, with lots of content (like articles and bigger), where the order of the content matters, like it does for regular text content, has been working well for paged media (where it wraps into reasonably sized chunks, aka pages), whereas for interactive media on screen it is not that convenient. When the user has read and scrolled to the end of one column, the user then has to scroll all the way back up to the beginning of the next column to continue reading, which is tedious (much more so than e.g. turning a page). Adding column wrapping should allow for large-content use cases on screen as well. On that note, Wikipedia uses multicol for the references at the end of articles, and the columns become really tall if there are many references, but that's not much of a problem, since the reading order here isn't crucial.
+Column layout, or paginated / fragmented content in general, with lots of content (like articles and bigger), where the order of the content matters, has been working well for paged media (where it wraps into reasonably sized chunks, aka pages), whereas for interactive media on screen it is not that convenient. When the user has read and scrolled to the end of one column, the user then has to scroll all the way back up to the beginning of the next column to continue reading, which is tedious (much more so than e.g. turning a page).
+
+Like this:
+
+https://github.com/user-attachments/assets/4b6c2b2b-8858-4543-8082-c5be82f4861a
+
+Adding column wrapping should allow for large-content use cases on screen as well. On that note, Wikipedia uses multicol for the references at the end of articles, and the columns become really tall if there are many references, but that's not much of a problem, since the reading order here isn't crucial. Another use case is vertical carousels.
 
 ## Example 1: simple vertical pagination
 
