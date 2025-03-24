@@ -12,7 +12,9 @@ Like this:
 
 https://github.com/user-attachments/assets/4b6c2b2b-8858-4543-8082-c5be82f4861a
 
-Adding column wrapping should allow for large-content use cases on screen as well. On that note, Wikipedia uses multicol for the references at the end of articles, and the columns become really tall if there are many references, but that's not much of a problem, since the reading order here isn't crucial. Another use case is vertical carousels.
+Adding column wrapping should allow for large-content use cases on screen as well. On that note, Wikipedia uses multicol for the references at the end of articles, and the columns become really tall if there are many references, but that's not much of a problem, since the reading order here isn't crucial.
+
+Another use case is paginated vertical carousels.
 
 ## Example 1: simple vertical pagination
 
