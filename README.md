@@ -4,11 +4,13 @@ Implementing the CSS properties `column-height` and `column-wrap` from https://d
 
 In multi-column (multicol) layout, content is fragmented into columns. When one column is full, another is created next to it, in the inline direction. If the block-size of the multicol container is unconstrained, and there are no forced breaks inside the columns, there will not be more columns than specified via the `column-width` and/or `column-count` CSS properties. If the multicol container block-size is constrained, and the multicol container isn't nested inside another fragmentation context, any additional columns needed will simply be created in the inline direction, overflowing the multicol container. If block-size is constrained by an outer fragmentation context, when paginating for printing, for instance, columns will take up all the available block-size on the page, and create at most as many columns as specified (still via `column-count` and `column-width`). If that's not enough to fit all the content, a page break will be inserted, and multicol layout will resume on the next page. This is essentially a form of implicit column wrapping.
 
-The new `column-wrap` property is intended to enable column wrapping in other scenarios than for nested multicol described above. If the value of `column-wrap` is `wrap`, and all the specified columns have been filled in the inline direction, instead of overflowing in the inline direction and overflowing the multicol container, a new row for columns will be created, so that more content can be added *below* the previous row of columns. The block-size of the rows can be set via the new `column-height` property. If it is `auto`, the block-size of the content box will be used instead. Treating `auto` like this is useful for scrollable overflow, so that there's room for one row of columns in the scrollport.
+The new `column-wrap` property is intended to enable column wrapping in other scenarios than for nested multicol described above. If the value of `column-wrap` is `wrap`, and all the specified columns have been filled in the inline direction, instead of overflowing in the inline direction, a new row for columns will be created, so that more content can be added *below* the previous row of columns. The block-size of the rows can be set via the new `column-height` property. If it is `auto`, the block-size of the content box will be used instead. Treating `auto` like this is useful for scrollable overflow, so that there's room for one row of columns in the scrollport.
 
 Column layout, or paginated / fragmented content in general, with lots of content (like articles and beyond), where the order of the content matters, like it does for regular text content, has been working well for paged media (where it wraps into reasonably sized chunks, aka pages), whereas for interactive media on screen it is not that convenient. When the user has read and scrolled to the end of one column, the user then has to scroll all the way back up to the beginning of the next column to continue reading, which is tedious (much more so than e.g. turning a page). Adding column wrapping should allow for large-content use cases on screen as well. On that note, Wikipedia uses multicol for the references at the end of articles, and the columns become really tall if there are many references, but that's not much of a problem, since the reading order here isn't crucial.
 
 ## Example 1: simple vertical pagination
+
+Here's one example that sets `column-wrap` but no `column-height`. The height of the columns will be the same as that of the content box of the multicol container.
 
 ```html
 <!DOCTYPE html>
@@ -85,7 +87,7 @@ Here's an example that sets both column width and height. It will create as many
 [...]
 ```
 
-
+https://github.com/user-attachments/assets/c66bf44c-4487-4cb1-b8c0-69a77292693c
 
 ## Example 3: vertical paginated carousel
 
