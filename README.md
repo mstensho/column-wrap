@@ -45,6 +45,8 @@ Column layout, or paginated / fragmented content in general, with lots of conten
 [...]
 ```
 
+https://github.com/user-attachments/assets/37855721-3b05-493b-8ea5-a99a8e66ad98
+
 ## Example 2: 2D columns
 
 Here's an example that sets both column width and height. It will create as many columns as there is room for along the inline axis, with a column height close to that of the viewport, and wrap into multiple rows as needed.
@@ -82,6 +84,8 @@ Here's an example that sets both column width and height. It will create as many
       was reading, but it had no pictures or conversations in it, “and what is
 [...]
 ```
+
+
 
 ## Example 3: vertical paginated carousel
 
@@ -162,3 +166,5 @@ And here's an online ice cream shop, with one column per row, but potentially ro
   <li style="background: #efd;"></li>
 </ul>
 ```
+
+https://github.com/user-attachments/assets/b96c4ce2-b3e3-4c9f-978d-cb1d96dc3a1c
