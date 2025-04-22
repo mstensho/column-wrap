@@ -178,3 +178,43 @@ And here's an online ice cream shop, with one column per row, but potentially ro
 ```
 
 https://github.com/user-attachments/assets/b96c4ce2-b3e3-4c9f-978d-cb1d96dc3a1c
+
+## What do web developers currently do to achieve such layout?
+
+If the author has full control over the size of the contents, the author may of
+course create a page-like experience with vertical scrolling (and
+snapping). Alternatively, the author may use some heavy javascriptery to measure
+the size of the contents, and place it into "pages" somehow. Currently there is
+no way of creating fragmentainers stacked in the block direction.
+
+## Alternatives to column wrapping
+
+An alternative approach would be explicit paginated overflow:
+https://drafts.csswg.org/css-overflow-5/#paginated-overflow , which hasn't yet
+been specced, but is in many ways a continuation of
+https://www.w3.org/TR/2011/WD-css3-gcpm-20111129/#paged-presentations , which
+got implemented in Opera's Presto engine one and a half decades ago.
+
+This would easily support [example 1](#example-1-simple-vertical-pagination) and
+[example 3](#example-3-vertical-paginated-carousel). It would also be possible
+to get paginated column layout by specifying both paged overflow AND `columns`
+(or by speccing something like `pagination-layout: horizontal 2` as mentioned in
+[ISSUE 22](https://drafts.csswg.org/css-overflow-5/#issue-e78fc89d)).
+
+One limitation, though is that this approach would depend on overflow, so that
+[example 2](#example-2-2d-columns), which has auto `height` and non-auto
+`column-height` wouldn't work.
+
+Another thing to figure out for the paginated overflow approach, is the gaps
+(and rules / decoration) between the pages. With the `column-wrap` approach we
+get it for "free", since there's both [`column-gap` /
+`row-gap`](https://drafts.csswg.org/css-align/#column-row-gap) and
+[`column-rule` /
+`row-rule`](https://drafts.csswg.org/css-gaps-1/#gap-decoration-shorthands)
+already.
+
+## Are there any privacy, security and accessibility considerations?
+
+There are no such additional concerns, compared to multicol without this
+feature. There is no accessibility functionality specifically for columns. It
+just relies on regular scrolling mechanisms and tab focus.
